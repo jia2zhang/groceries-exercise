@@ -29,6 +29,7 @@ print(products)
 # pprint(products)
 
 # TODO: write some Python code here to produce the desired output
+### Checkpoint 1 - Printing Products ###
 ## Print the number of products.
 products_count = len(products)
 
@@ -64,3 +65,26 @@ products_sorted = sorted(products, key=operator.itemgetter("name"))
 print("Alphabetical order of the name and price of each product rounded to two decimal places: ")
 for np in products_sorted:
     print("+", np["name"], "("+str("${0:.2f}".format(np["price"]))+")")
+
+
+### Checkpoint 2 - Printing Departments ###
+## Print the number of unique departments.
+unique_dept = set()
+for x in products:
+    unique_dept.add(x["department"])
+
+print("--------------")
+print("THERE ARE", len(unique_dept), "UNIQUE DEPARTMENTS.")
+print("--------------")
+
+## Print the name of each unique department in alphabetical order.
+unique_dept = sorted(unique_dept)
+print("The name of each unique department:")
+for ud in unique_dept:
+    print(ud)
+
+## Print in alphabetical order the name of each unique department, as well as the number of products associated with that department.
+print("Name of each unique department and number of products in each department:")
+############ to be continued...........
+
+## Print in alphabetical order the name of each unique department, as well as the number of products associated with that department, and properly differentiate between "products" plural and "product" singular, depending on how many there are
