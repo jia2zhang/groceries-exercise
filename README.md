@@ -1,6 +1,6 @@
 # groceries-exercise
 
-##Setup the Repo
+## Setup the Repo
 
 Navigate to the local repo called "groceries-exercise"
 Setup the virtual environment

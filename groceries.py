@@ -1,5 +1,5 @@
 # groceries.py
-
+import operator
 #from pprint import pprint
 
 products = [
@@ -29,3 +29,38 @@ print(products)
 # pprint(products)
 
 # TODO: write some Python code here to produce the desired output
+## Print the number of products.
+products_count = len(products)
+
+print("--------------")
+print("THERE ARE "+str(products_count)+" PRODUCTS")
+print("--------------")
+
+## Print the first product.
+# print("This is the first product: ", products[0])
+
+## Print the name of the first product.
+# prod1 = products[0].get("name")
+# print("Name of the first product: ", prod1)
+
+## Print the name of each product.
+# for p in products:
+#     print(p["name"])
+
+## Print in alphabetical order the name of each product.
+# products_sorted = sorted(products, key=operator.itemgetter("name"))
+# print("Name of each product by alphabetical order: ")
+# for pp in products_sorted:
+#     print(pp["name"])
+
+## Print in alphabetical order the name and price of each product.
+# products_sorted = sorted(products, key=operator.itemgetter("name"))
+# print("Alphabetical order of the name and price of each product: ")
+# for np in products_sorted:
+#     print("+", np["name"], "("+str(np["price"])+")")
+
+## Print in alphabetical order the name and price of each product, where the price is rounded to two decimal places.
+products_sorted = sorted(products, key=operator.itemgetter("name"))
+print("Alphabetical order of the name and price of each product rounded to two decimal places: ")
+for np in products_sorted:
+    print("+", np["name"], "("+str("${0:.2f}".format(np["price"]))+")")
