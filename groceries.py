@@ -68,7 +68,7 @@ for np in products_sorted:
 
 
 ### Checkpoint 2 - Printing Departments ###
-## Print the number of unique departments.
+## Print the number of unique departments. # Use a "set" because it auto-removes duplicates
 unique_dept = set()
 for x in products:
     unique_dept.add(x["department"])
@@ -78,13 +78,23 @@ print("THERE ARE", len(unique_dept), "UNIQUE DEPARTMENTS.")
 print("--------------")
 
 ## Print the name of each unique department in alphabetical order.
-unique_dept = sorted(unique_dept)
-print("The name of each unique department:")
-for ud in unique_dept:
-    print(ud)
-
-## Print in alphabetical order the name of each unique department, as well as the number of products associated with that department.
-print("Name of each unique department and number of products in each department:")
-############ to be continued...........
+# unique_dept = sorted(unique_dept)
+# print("The name of each unique department:")
+# for ud in unique_dept:
+#     print(ud)
 
 ## Print in alphabetical order the name of each unique department, as well as the number of products associated with that department, and properly differentiate between "products" plural and "product" singular, depending on how many there are
+print("Name of each unique department and number of products in each department:")
+unique_dept = sorted(unique_dept)
+
+for ud in unique_dept:
+    matched_prods_dept = [p for p in products if p["department"] == ud]
+    department_prods_count = len(matched_prods_dept)
+    
+    if department_prods_count > 1:
+        label = "products"
+    else:
+        label = "product"
+
+    print("+", ud.title(), "("+str(department_prods_count), label+")")
+
